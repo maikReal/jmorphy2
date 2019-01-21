@@ -4,13 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Map;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
 import java.text.Normalizer;
 
 import com.google.common.cache.Cache;
@@ -20,14 +14,15 @@ import com.google.common.collect.Sets;
 
 import company.evo.jmorphy2.units.*;
 
-
 public class MorphAnalyzer {
     private final Tag.Storage tagStorage;
     private final List<AnalyzerUnit> units;
     private final ProbabilityEstimator prob;
-    private final Cache<String,List<ParsedWord>> cache;
+    private final Cache<String, List<ParsedWord>> cache;
 
-    enum Lang { RU, UK };
+    enum Lang {RU, UK}
+
+    ;
 
     public static class Builder {
         // private static final String ENV_DICT_PATH = "PYMORPHY2_DICT_PATH";
@@ -36,11 +31,11 @@ public class MorphAnalyzer {
 
         private String dictPath;
         private FileLoader loader;
-        private Map<Character,String> charSubstitutes;
+        private Map<Character, String> charSubstitutes;
         private Lang lang = Lang.RU;
         private List<AnalyzerUnit.Builder> unitBuilders;
         private int cacheSize = DEFAULT_CACHE_SIZE;
-        private Cache<String,List<ParsedWord>> cache = null;
+        private Cache<String, List<ParsedWord>> cache = null;
 
         public Builder dictPath(String path) {
             this.dictPath = path;
@@ -49,10 +44,12 @@ public class MorphAnalyzer {
 
         public Builder fileLoader(FileLoader loader) {
             this.loader = loader;
+            // open file just one time
+            SynoDictionary.openFile();
             return this;
         }
 
-        public Builder charSubstitutes(Map<Character,String> charSubstitutes) {
+        public Builder charSubstitutes(Map<Character, String> charSubstitutes) {
             this.charSubstitutes = charSubstitutes;
             return this;
         }
@@ -63,6 +60,8 @@ public class MorphAnalyzer {
         }
 
         public MorphAnalyzer build() throws IOException {
+
+
             Tag.Storage tagStorage = new Tag.Storage();
             if (loader == null) {
                 if (dictPath == null) {
@@ -82,7 +81,7 @@ public class MorphAnalyzer {
                     }
                 }
                 AnalyzerUnit.Builder dictUnitBuilder = new DictionaryUnit.Builder(dictBuilder, true, 1.0f)
-                    .charSubstitutes(charSubstitutes);
+                        .charSubstitutes(charSubstitutes);
                 unitBuilders = new ArrayList<>();
                 unitBuilders.add(dictUnitBuilder);
                 unitBuilders.add(new NumberUnit.Builder(true, 0.9f));
@@ -94,7 +93,7 @@ public class MorphAnalyzer {
                 }
                 unitBuilders.add(new UnknownPrefixUnit.Builder(dictUnitBuilder, true, 0.5f));
                 unitBuilders.add(new KnownSuffixUnit.Builder(dictBuilder, true, 0.5f)
-                                 .charSubstitutes(charSubstitutes));
+                        .charSubstitutes(charSubstitutes));
                 unitBuilders.add(new UnknownUnit.Builder(true, 1.0f));
             }
             List<AnalyzerUnit> units = new ArrayList<>();
@@ -115,12 +114,14 @@ public class MorphAnalyzer {
             }
             return new MorphAnalyzer(tagStorage, units, prob, cache);
         }
-    };
+    }
+
+    ;
 
     private MorphAnalyzer(Tag.Storage tagStorage,
                           List<AnalyzerUnit> units,
                           ProbabilityEstimator prob,
-                          Cache<String,List<ParsedWord>> cache) throws IOException {
+                          Cache<String, List<ParsedWord>> cache) throws IOException {
         this.tagStorage = tagStorage;
         this.units = units;
         this.prob = prob;
@@ -182,10 +183,12 @@ public class MorphAnalyzer {
         List<ParsedWord> parseds;
         if (cache != null) {
             parseds = cache.getIfPresent(word);
+//            System.out.println(parseds);
             if (parseds == null) {
                 parseds = parseNC(word);
                 cache.put(word, parseds);
             }
+//            System.out.println(parseds);
             return parseds;
         }
         return parseNC(word);
@@ -196,6 +199,7 @@ public class MorphAnalyzer {
         List<ParsedWord> parseds = Lists.newArrayList();
         for (AnalyzerUnit unit : units) {
             List<ParsedWord> unitParseds = unit.parse(word, wordLower);
+//            System.out.println(unitParseds);
             if (unitParseds == null) {
                 continue;
             }
@@ -209,7 +213,31 @@ public class MorphAnalyzer {
         parseds = filterDups(parseds);
         parseds = estimate(parseds);
         Collections.sort(parseds, Collections.reverseOrder());
+
         return parseds;
+    }
+
+    // parcer with using synos for normalForm
+    public Hashtable<Integer, NewParsedWord> parse2(String word) throws IOException {
+        List<ParsedWord> endParsedWord = parse(word);
+//
+
+        Hashtable<Integer, NewParsedWord> endRes = new Hashtable<>();
+
+        int index = 0;
+        for (ParsedWord w : endParsedWord) {
+            SynoDictionary s = new SynoDictionary();
+            NewParsedWord wordObject = new NewParsedWord(w.word, w.tag, Arrays.asList(w.normalForm), w.foundWord, w.score);
+//            result.add(index, wordObject);
+            endRes.put(index, wordObject);
+            index += 0;
+
+//            System.out.println(wordObject);
+
+        }
+//        System.out.println(endRes.get(0));
+        return endRes;
+
     }
 
     private List<ParsedWord> estimate(List<ParsedWord> parseds) throws IOException {
@@ -256,4 +284,16 @@ public class MorphAnalyzer {
         }
         return filteredParseds;
     }
+
+//
+//    public static void main(String[] args) throws IOException {
+////        String lang = "ru";
+////        String dictResourcePath = String.format("/company/evo/jmorphy2/%s/pymorphy2_dicts", "ru");
+////        MorphAnalyzer m = new MorphAnalyzer.Builder()
+////                .fileLoader(new ResourceFileLoader(dictResourcePath))
+////                .cacheSize(0)
+////                .build();
+//        MorphAnalyzer m = new MorphAnalyzer();
+//        m.parse("красивый");
+//    }
 }

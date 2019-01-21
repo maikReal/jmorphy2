@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="/usr/share/gradle/bin" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/dawg" />
+            <option value="$PROJECT_DIR$/jmorphy2-core" />
+            <option value="$PROJECT_DIR$/jmorphy2-dicts-ru" />
+            <option value="$PROJECT_DIR$/jmorphy2-dicts-uk" />
+            <option value="$PROJECT_DIR$/jmorphy2-elasticsearch" />
+            <option value="$PROJECT_DIR$/jmorphy2-lucene" />
+            <option value="$PROJECT_DIR$/jmorphy2-nlp" />
+            <option value="$PROJECT_DIR$/jmorphy2-solr" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

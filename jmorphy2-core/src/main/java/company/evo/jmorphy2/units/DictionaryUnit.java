@@ -5,10 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import company.evo.jmorphy2.Dictionary;
-import company.evo.jmorphy2.ParsedWord;
-import company.evo.jmorphy2.Tag;
-import company.evo.jmorphy2.WordsDAWG;
+import company.evo.jmorphy2.*;
 
 
 public class DictionaryUnit extends AnalyzerUnit {
@@ -61,6 +58,10 @@ public class DictionaryUnit extends AnalyzerUnit {
             Tag tag = dict.buildTag(wf.paradigmId, wf.idx);
             parseds.add(new DictionaryParsedWord(wordLower, tag, normalForm, wf.word, wf, score));
         }
+
+        // возможно нужно написать здесь
+//        NewParsedWord newPrasedWord = new NewParsedWord(parseds.);
+        System.out.println(parseds);
         return parseds;
     }
 

@@ -4,14 +4,17 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
+import org.omg.CORBA.INTERNAL;
 
 import java.io.IOException;
+import java.io.SyncFailedException;
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.ArrayList;
+
+import static org.junit.Assert.*;
 
 
 @RunWith(JUnit4.class)
@@ -26,6 +29,73 @@ public class MorphAnalyzerTest {
         }
     }
 
+
+    // testing SynoDict
+    @Test
+    public void testSynoDict() throws IOException {
+        SynoDictionary synos = new SynoDictionary();
+
+
+        assertEquals(Arrays.asList("бык", "бычий"), Arrays.asList(synos.getSyno("бычок")).get(0));
+        assertEquals(Arrays.asList("бык", "бычок"), Arrays.asList(synos.getSyno("бычий")).get(0));
+        assertEquals(Arrays.asList("бычий", "бычок"), Arrays.asList(synos.getSyno("бык")).get(0));
+
+
+        assertEquals(Arrays.asList("сад", "садик", "садок"), Arrays.asList(synos.getSyno("садовый")).get(0));
+        assertEquals(Arrays.asList("сад", "садик", "садовый"), Arrays.asList(synos.getSyno("садок")).get(0));
+
+
+        assertEquals("томик", Arrays.asList(synos.getSyno("том").get(0)).get(0));
+        assertEquals("том", Arrays.asList(synos.getSyno("томик").get(0)).get(0));
+
+
+        assertEquals(Arrays.asList("баллон", "баллонный"), Arrays.asList(synos.getSyno("баллончик")).get(0));
+        assertEquals(Arrays.asList("баллон", "баллончик"), Arrays.asList(synos.getSyno("баллонный")).get(0));
+        assertEquals(Arrays.asList("баллонный", "баллончик"), Arrays.asList(synos.getSyno("баллон")).get(0));
+
+
+    }
+
+    // final tests for modifier plugin
+    @Test
+    public void test_syno() throws IOException {
+
+        assertParsed2("[бычий:ADJF,Poss inan,masc,sing,accs:[бык, бычок]:бычий:0.5]", morph.parse2("бычий"));
+        assertParsed2("[бык:NOUN,inan,masc,Geox sing,accs:[бычий, бычок]:бык:0.2]", morph.parse2("бык"));
+
+
+        assertParsed2("[князь:NOUN,anim,masc sing,nomn:[княжий]:князь:1.0]", morph.parse2("князь"));
+        assertParsed2("[княжий:ADJF,Poss inan,masc,sing,accs:[князь]:княжий:0.5]", morph.parse2("княжий"));
+
+        assertParsed2("[ступа:NOUN,inan,femn sing,nomn:[ступка]:ступа:1.0]", morph.parse2("ступа"));
+        assertParsed2("[ступка:NOUN,inan,femn sing,nomn:[ступа]:ступка:1.0]", morph.parse2("ступка"));
+
+        assertParsed2("[олень:NOUN,anim,masc sing,nomn:[олений]:олень:1.0]", morph.parse2("олень"));
+        assertParsed2("[олений:ADJF,Poss inan,masc,sing,accs:[олень]:олений:0.5]", morph.parse2("олений"));
+    }
+
+    private void assertParsed2(String expected, Hashtable parseds2) {
+
+        int index = 0;
+        Hashtable<Integer, NewParsedWord> parseds = new Hashtable<>();
+        parseds.putAll(parseds2);
+        ArrayList<String> finalRes = new ArrayList<>();
+
+
+        System.out.println(parseds);
+        while (index < parseds2.size()) {
+
+            finalRes.add(parseds.get(index).word() + ":" + parseds.get(index).tag() + ":" + parseds.get(index).normalForm() + ":" +
+                    parseds.get(index).foundWord() + ":" + parseds.get(index).score());
+            index += 1;
+        }
+
+        assertEquals(expected, finalRes.toString());
+
+
+    }
+
+
     @Test
     public void test_parse() throws IOException {
         List<ParsedWord> parseds;
@@ -33,9 +103,9 @@ public class MorphAnalyzerTest {
         parseds = morph.parse("красивого");
         Tag tag = parseds.get(0).tag;
         assertParseds("красивого:ADJF,Qual neut,sing,gent:красивый:красивого:0.5\n" +
-                      "красивого:ADJF,Qual masc,sing,gent:красивый:красивого:0.25\n" +
-                      "красивого:ADJF,Qual anim,masc,sing,accs:красивый:красивого:0.25",
-                      parseds);
+                        "красивого:ADJF,Qual masc,sing,gent:красивый:красивого:0.25\n" +
+                        "красивого:ADJF,Qual anim,masc,sing,accs:красивый:красивого:0.25",
+                parseds);
         assertEquals(morph.getGrammeme("POST"), morph.getGrammeme("ADJF").getRoot());
         assertEquals(morph.getGrammeme("ADJF"), tag.POS);
         assertEquals(morph.getGrammeme("gent"), tag.Case);
@@ -50,66 +120,66 @@ public class MorphAnalyzerTest {
 
         // dictionary word: capitalized
         assertParseds("украину:NOUN,inan,femn,Sgtm,Geox sing,accs:украина:украину:1.0",
-                      morph.parse("Украину"));
+                morph.parse("Украину"));
 
         // known prefix
         assertParseds("псевдокошка:NOUN,anim,femn sing,nomn:псевдокошка:кошка:0.8333333\n" +
-                      "псевдокошка:NOUN,inan,femn sing,nomn:псевдокошка:кошка:0.1666666",
-                      morph.parse("псевдокошка"));
+                        "псевдокошка:NOUN,inan,femn sing,nomn:псевдокошка:кошка:0.1666666",
+                morph.parse("псевдокошка"));
         assertParseds("лже-кот:NOUN,anim,masc sing,nomn:лже-кот:кот:1.0",
-                      morph.parse("лже-кот"));
+                morph.parse("лже-кот"));
 
         // unknown prefix
         assertParseds("лошарики:NOUN,inan,masc plur,nomn:лошарик:шарики:0.2\n" +
-                      "лошарики:NOUN,inan,masc plur,accs:лошарик:шарики:0.2\n" +
-                      "лошарики:NOUN,anim,masc,Name plur,nomn:лошарик:арики:0.2\n" +
-                      "лошарики:NOUN,anim,femn,Name sing,gent:лошарика:арики:0.2\n" +
-                      "лошарики:NOUN,anim,femn,Name plur,nomn:лошарика:арики:0.2\n",
-                      morph.parse("лошарики"));
+                        "лошарики:NOUN,inan,masc plur,accs:лошарик:шарики:0.2\n" +
+                        "лошарики:NOUN,anim,masc,Name plur,nomn:лошарик:арики:0.2\n" +
+                        "лошарики:NOUN,anim,femn,Name sing,gent:лошарика:арики:0.2\n" +
+                        "лошарики:NOUN,anim,femn,Name plur,nomn:лошарика:арики:0.2\n",
+                morph.parse("лошарики"));
 
         // unknown prefix: maximum prefix length
         assertParseds("бочкоподобный:ADJF,Subx,Qual masc,sing,nomn:бочкоподобный:подобный:0.666666\n" +
-                      "бочкоподобный:ADJF,Subx,Qual inan,masc,sing,accs:бочкоподобный:подобный:0.333333\n",
-                      morph.parse("бочкоподобный"));
+                        "бочкоподобный:ADJF,Subx,Qual inan,masc,sing,accs:бочкоподобный:подобный:0.333333\n",
+                morph.parse("бочкоподобный"));
 
         // unknown prefix: minimum reminder
         assertParseds("штрихкот:NOUN,anim,masc sing,nomn:штрихкот:кот:1.0\n",
-                      morph.parse("штрихкот"));
+                morph.parse("штрихкот"));
 
         assertParseds("снега:NOUN,inan,masc sing,gent:снег:снега:0.818181\n" +
-                      "снега:NOUN,inan,masc plur,nomn:снег:снега:0.090909\n" +
-                      "снега:NOUN,inan,masc plur,accs:снег:снега:0.090909\n",
-                      morph.parse("снега"));
+                        "снега:NOUN,inan,masc plur,nomn:снег:снега:0.090909\n" +
+                        "снега:NOUN,inan,masc plur,accs:снег:снега:0.090909\n",
+                morph.parse("снега"));
 
         // known suffix
         assertParseds("няшка:NOUN,inan,femn sing,nomn:няшка:няшка:1.0\n",
-                      morph.parse("няшка"));
+                morph.parse("няшка"));
         assertParseds("шуруповерт:NOUN,anim,masc sing,nomn:шуруповерт:оверт:1.0\n",
-                      morph.parse("шуруповерт"));
+                morph.parse("шуруповерт"));
         assertParseds("шуруповертами:NOUN,inan,masc plur,ablt:шуруповерт:ртами:1.0\n",
-                      morph.parse("шуруповертами"));
+                morph.parse("шуруповертами"));
 
         // known suffix: with paradigm prefix
         assertParseds("наиняшнейший:ADJF,Supr,Qual masc,sing,nomn:няшный:ейший:0.25\n" +
-                      "наиняшнейший:ADJF,Supr,Qual inan,masc,sing,accs:няшный:ейший:0.25\n" +
-                      "наиняшнейший:ADJF,Supr,Qual masc,sing,nomn:наиняшный:ейший:0.248387\n" +
-                      "наиняшнейший:ADJF,Supr,Qual inan,masc,sing,accs:наиняшный:ейший:0.248387\n" +
-                      "наиняшнейший:NOUN,anim,masc sing,nomn:наиняшнейший:ейший:0.003226\n",
-                      morph.parse("наиняшнейший"));
+                        "наиняшнейший:ADJF,Supr,Qual inan,masc,sing,accs:няшный:ейший:0.25\n" +
+                        "наиняшнейший:ADJF,Supr,Qual masc,sing,nomn:наиняшный:ейший:0.248387\n" +
+                        "наиняшнейший:ADJF,Supr,Qual inan,masc,sing,accs:наиняшный:ейший:0.248387\n" +
+                        "наиняшнейший:NOUN,anim,masc sing,nomn:наиняшнейший:ейший:0.003226\n",
+                morph.parse("наиняшнейший"));
 
         // gen2, loct, loc2
         assertParseds("снеге:NOUN,inan,masc sing,loct:снег:снеге:1.0", morph.parse("снеге"));
         assertParseds("снегу:NOUN,inan,masc sing,loc2:снег:снегу:0.5\n" +
-                      "снегу:NOUN,inan,masc sing,datv:снег:снегу:0.375\n" +
-                      "снегу:NOUN,inan,masc sing,gen2:снег:снегу:0.125\n",
-                      morph.parse("снегу"));
+                        "снегу:NOUN,inan,masc sing,datv:снег:снегу:0.375\n" +
+                        "снегу:NOUN,inan,masc sing,gen2:снег:снегу:0.125\n",
+                morph.parse("снегу"));
 
         // е, ё
         assertParseds("ёжик:NOUN,anim,masc sing,nomn:ёжик:ёжик:1.0", morph.parse("ёжик"));
         assertParseds("ежик:NOUN,anim,masc sing,nomn:ёжик:ёжик:1.0", morph.parse("ежик"));
         assertParseds("теплые:ADJF,Qual plur,nomn:тёплый:тёплые:0.5\n" +
-                      "теплые:ADJF,Qual inan,plur,accs:тёплый:тёплые:0.5",
-                      morph.parse("теплые"));
+                        "теплые:ADJF,Qual inan,plur,accs:тёплый:тёплые:0.5",
+                morph.parse("теплые"));
 
         // NUMB
         assertParseds("1:NUMB,intg:1:1:1.0", morph.parse("1"));
@@ -129,13 +199,13 @@ public class MorphAnalyzerTest {
 
         // ROMN (all roman numbers are also latin)
         assertParseds("MD:ROMN:MD:MD:0.5\n" +
-                      "MD:LATN:MD:MD:0.5\n",
-                      morph.parse("MD"));
+                        "MD:LATN:MD:MD:0.5\n",
+                morph.parse("MD"));
 
         // Unknown word
         assertParseds("ъь:UNKN:ъь:ъь:1.0", morph.parse("ъь"));
         assertParseds("тестsymbolmix:UNKN:тестsymbolmix:тестsymbolmix:1.0",
-                      morph.parse("тестsymbolmix"));
+                morph.parse("тестsymbolmix"));
 
         // TODO: Hyphen
     }
@@ -150,9 +220,9 @@ public class MorphAnalyzerTest {
     @Test
     public void test_getTag() throws IOException {
         assertEquals(Arrays.asList(morph.getTag("ADJF,Qual neut,sing,gent"),
-                                   morph.getTag("ADJF,Qual masc,sing,gent"),
-                                   morph.getTag("ADJF,Qual anim,masc,sing,accs")),
-                     morph.tag("красивого"));
+                morph.getTag("ADJF,Qual masc,sing,gent"),
+                morph.getTag("ADJF,Qual anim,masc,sing,accs")),
+                morph.tag("красивого"));
     }
 
     @Test
@@ -167,42 +237,42 @@ public class MorphAnalyzerTest {
         parseds = morph.parse("красивого");
         lexeme = parseds.get(0).getLexeme();
         assertParseds("красивый:ADJF,Qual masc,sing,nomn:красивый:красивый:0.5\n" +
-                      "красивого:ADJF,Qual masc,sing,gent:красивый:красивого:0.5\n" +
-                      "красивому:ADJF,Qual masc,sing,datv:красивый:красивому:0.5\n" +
-                      "красивого:ADJF,Qual anim,masc,sing,accs:красивый:красивого:0.5\n" +
-                      "красивый:ADJF,Qual inan,masc,sing,accs:красивый:красивый:0.5\n" +
-                      "красивым:ADJF,Qual masc,sing,ablt:красивый:красивым:0.5\n" +
-                      "красивом:ADJF,Qual masc,sing,loct:красивый:красивом:0.5\n" +
-                      "красивая:ADJF,Qual femn,sing,nomn:красивый:красивая:0.5",
-                      lexeme,
-                      false);
+                        "красивого:ADJF,Qual masc,sing,gent:красивый:красивого:0.5\n" +
+                        "красивому:ADJF,Qual masc,sing,datv:красивый:красивому:0.5\n" +
+                        "красивого:ADJF,Qual anim,masc,sing,accs:красивый:красивого:0.5\n" +
+                        "красивый:ADJF,Qual inan,masc,sing,accs:красивый:красивый:0.5\n" +
+                        "красивым:ADJF,Qual masc,sing,ablt:красивый:красивым:0.5\n" +
+                        "красивом:ADJF,Qual masc,sing,loct:красивый:красивом:0.5\n" +
+                        "красивая:ADJF,Qual femn,sing,nomn:красивый:красивая:0.5",
+                lexeme,
+                false);
         assertEquals(91, lexeme.size());
 
         // known prefix
         parseds = morph.parse("лжекот");
         lexeme = parseds.get(0).getLexeme();
         assertParseds("лжекот:NOUN,anim,masc sing,nomn:лжекот:кот:1.0\n" +
-                      "лжекота:NOUN,anim,masc sing,gent:лжекот:кота:1.0",
-                      lexeme,
-                      false);
+                        "лжекота:NOUN,anim,masc sing,gent:лжекот:кота:1.0",
+                lexeme,
+                false);
         assertEquals(12, lexeme.size());
 
         // unkown prefix
         parseds = morph.parse("лошарики");
         lexeme = parseds.get(0).getLexeme();
         assertParseds("лошарик:NOUN,inan,masc sing,nomn:лошарик:шарик:1.0\n" +
-                      "лошарика:NOUN,inan,masc sing,gent:лошарик:шарика:1.0",
-                      lexeme,
-                      false);
+                        "лошарика:NOUN,inan,masc sing,gent:лошарик:шарика:1.0",
+                lexeme,
+                false);
         assertEquals(12, lexeme.size());
 
         // known suffix
         parseds = morph.parse("шуруповертами");
         lexeme = parseds.get(0).getLexeme();
         assertParseds("шуруповерт:NOUN,inan,masc sing,nomn:шуруповерт:ртами:1.0\n" +
-                      "шуруповерта:NOUN,inan,masc sing,gent:шуруповерт:ртами:1.0\n",
-                      lexeme,
-                      false);
+                        "шуруповерта:NOUN,inan,masc sing,gent:шуруповерт:ртами:1.0\n",
+                lexeme,
+                false);
         assertEquals(12, lexeme.size());
 
         // Unknown word
@@ -243,13 +313,13 @@ public class MorphAnalyzerTest {
                         Arrays.asList(morph.getGrammeme("Supr"))
                 );
         assertParseds("красивая:ADJF,Qual femn,sing,nomn:красивый:красивая:0.5\n" +
-                      "красивой:ADJF,Qual femn,sing,gent:красивый:красивой:0.5\n" +
-                      "красивой:ADJF,Qual femn,sing,datv:красивый:красивой:0.5\n" +
-                      "красивую:ADJF,Qual femn,sing,accs:красивый:красивую:0.5\n" +
-                      "красивой:ADJF,Qual femn,sing,ablt:красивый:красивой:0.5\n" +
-                      "красивою:ADJF,Qual femn,sing,ablt,V-oy:красивый:красивою:0.5\n" +
-                      "красивой:ADJF,Qual femn,sing,loct:красивый:красивой:0.5",
-                      paradigm);
+                        "красивой:ADJF,Qual femn,sing,gent:красивый:красивой:0.5\n" +
+                        "красивой:ADJF,Qual femn,sing,datv:красивый:красивой:0.5\n" +
+                        "красивую:ADJF,Qual femn,sing,accs:красивый:красивую:0.5\n" +
+                        "красивой:ADJF,Qual femn,sing,ablt:красивый:красивой:0.5\n" +
+                        "красивою:ADJF,Qual femn,sing,ablt,V-oy:красивый:красивою:0.5\n" +
+                        "красивой:ADJF,Qual femn,sing,loct:красивый:красивой:0.5",
+                paradigm);
     }
 
     private void assertParseds(String expectedString, List<ParsedWord> parseds) throws IOException {
@@ -263,11 +333,12 @@ public class MorphAnalyzerTest {
                 continue;
             }
             String[] parts = s.split(":");
+
             expected.add(new ParsedWordMock(parts[0],
-                                            morph.getTag(parts[1]), 
-                                            parts[2],
-                                            parts[3],
-                                            Float.parseFloat(parts[4])));
+                    morph.getTag(parts[1]),
+                    parts[2],
+                    parts[3],
+                    Float.parseFloat(parts[4])));
         }
         if (!checkLength) {
             assertEquals(expected, parseds.subList(0, expected.size()));
@@ -296,9 +367,9 @@ public class MorphAnalyzerTest {
             if (obj instanceof ParsedWord) {
                 ParsedWord other = (ParsedWord) obj;
                 return word.equals(other.word)
-                    && tag.equals(other.tag)
-                    && normalForm.equals(other.normalForm)
-                    && Math.abs(score - other.score) < EPS;
+                        && tag.equals(other.tag)
+                        && normalForm.equals(other.normalForm)
+                        && Math.abs(score - other.score) < EPS;
             }
             return false;
         }

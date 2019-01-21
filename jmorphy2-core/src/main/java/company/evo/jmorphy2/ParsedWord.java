@@ -32,7 +32,7 @@ public abstract class ParsedWord implements Comparable {
     }
 
     public List<ParsedWord> inflect(Collection<Grammeme> requiredGrammemes,
-            Collection<Grammeme> excludeGrammemes) {
+                                    Collection<Grammeme> excludeGrammemes) {
         List<ParsedWord> paradigm = new ArrayList<ParsedWord>();
         for (ParsedWord p : getLexeme()) {
             if (p.tag.containsAll(requiredGrammemes) && !p.tag.containsAny(excludeGrammemes)) {
@@ -45,7 +45,7 @@ public abstract class ParsedWord implements Comparable {
     @Override
     public String toString() {
         return String.format("<ParsedWord: \"%s\", \"%s\", \"%s\", \"%s\", %.6f>",
-            word, tag, normalForm, foundWord, score);
+                word, tag, normalForm, foundWord, score);
     }
 
     @Override
@@ -63,6 +63,7 @@ public abstract class ParsedWord implements Comparable {
     public static class Unique {
         public final Tag tag;
         public final String normalForm;
+        public final SynoDictionary synos = new SynoDictionary();
 
         public Unique(Tag tag, String normalForm) {
             this.tag = tag;
@@ -77,7 +78,7 @@ public abstract class ParsedWord implements Comparable {
 
             Unique other = (Unique) obj;
             return tag.equals(other.tag)
-                && normalForm.equals(other.normalForm);
+                    && normalForm.equals(other.normalForm);
         }
 
         @Override
