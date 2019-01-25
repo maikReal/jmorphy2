@@ -61,7 +61,7 @@ public class DictionaryUnit extends AnalyzerUnit {
 
         // возможно нужно написать здесь
 //        NewParsedWord newPrasedWord = new NewParsedWord(parseds.);
-        System.out.println(parseds);
+//        System.out.println(parseds);
         return parseds;
     }
 

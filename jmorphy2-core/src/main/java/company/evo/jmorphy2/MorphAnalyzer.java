@@ -154,11 +154,14 @@ public class MorphAnalyzer {
         Set<String> uniqueNormalForms = new HashSet<String>();
 
         for (ParsedWord p : parseds) {
+
             if (!uniqueNormalForms.contains(p.normalForm)) {
                 normalForms.add(p.normalForm);
                 uniqueNormalForms.add(p.normalForm);
             }
         }
+
+
         return normalForms;
     }
 
@@ -213,7 +216,6 @@ public class MorphAnalyzer {
         parseds = filterDups(parseds);
         parseds = estimate(parseds);
         Collections.sort(parseds, Collections.reverseOrder());
-
         return parseds;
     }
 

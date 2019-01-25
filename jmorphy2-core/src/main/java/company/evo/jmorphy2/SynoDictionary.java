@@ -10,7 +10,8 @@ import java.util.List;
 public class SynoDictionary {
 
     static List<String> allSynos = new ArrayList<>();
-    static final String pathToDict = "src/main/resources/lang/ru/Syno_Dictionary.txt";
+    // need rewrite path to file
+    static final String pathToDict = "/home/maiky/Documents/jmorphy2_plugin/jmorphy2-core/src/main/resources/lang/ru/Syno_Dictionary.txt";
 
 
     final String filename = "Syno_Dictionary.txt";
@@ -29,9 +30,6 @@ public class SynoDictionary {
             while ((text = reader.readLine()) != null) {
                 allSynos.add(text);
             }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -63,6 +61,19 @@ public class SynoDictionary {
 
         return result;
 
+    }
+
+    public List<String> getSyno2(List<String> startWord){
+
+        for (String word : startWord){
+            for (String syno : allSynos){
+                if (syno.contains(word)) {
+                    return getAllVar(word, syno);
+
+                }
+            }
+        }
+        return null;
     }
 
     public List<String> getSyno(String startWord) {

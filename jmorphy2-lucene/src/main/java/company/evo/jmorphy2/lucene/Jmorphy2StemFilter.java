@@ -7,10 +7,14 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.google.common.collect.Lists;
+import com.sun.tools.classfile.Opcode;
+import company.evo.jmorphy2.SynoDictionary;
 import org.apache.lucene.analysis.TokenFilter;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.apache.lucene.analysis.tokenattributes.KeywordAttribute;
+import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
 import org.apache.lucene.analysis.tokenattributes.PositionIncrementAttribute;
 
 import company.evo.jmorphy2.Grammeme;
@@ -98,25 +102,31 @@ public class Jmorphy2StemFilter extends TokenFilter {
                     return true;
                 }
 
+
                 normalForms = getNormalForms(termAtt).iterator();
 
-                if (normalForms.hasNext()) {
-                    setTerm(normalForms.next(), posIncAtt.getPositionIncrement());
                     if (normalForms.hasNext()) {
-                        savedState = captureState();
-                    }
-                    skippedPositions = 0;
-                    return true;
-                }
+                        setTerm(normalForms.next(), posIncAtt.getPositionIncrement()+1); //changes here
+                        if (normalForms.hasNext()) {
+                            savedState = captureState();
+                        }
 
-                skippedPositions += posIncAtt.getPositionIncrement();
+
+                        skippedPositions = 0;
+                        return true;
+                    }
+
+
+                    skippedPositions += posIncAtt.getPositionIncrement();
+
             }
 
             return false;
         }
 
         restoreState(savedState);
-        setTerm(normalForms.next(), 0);
+        setTerm(normalForms.next(), posIncAtt.getPositionIncrement()); // changes here
+
         return true;
     }
 
@@ -160,7 +170,19 @@ public class Jmorphy2StemFilter extends TokenFilter {
             }
         }
 
-        return normalForms;
+        SynoDictionary syno = new SynoDictionary();
+
+
+        if (syno.getSyno2(normalForms) == null){
+            return normalForms;
+        }else{
+            List<String> normF = new ArrayList<String>();
+            normF.add(normalForms.get(0));
+            normF.addAll(syno.getSyno2(normalForms));
+
+            return normF;
+        }
+
     }
 
     private void setTerm(String stem, int posInc) {

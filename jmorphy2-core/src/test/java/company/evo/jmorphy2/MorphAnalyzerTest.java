@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.omg.CORBA.INTERNAL;
+//import org.omg.CORBA.INTERNAL;
 
 import java.io.IOException;
 import java.io.SyncFailedException;
@@ -34,7 +34,9 @@ public class MorphAnalyzerTest {
     @Test
     public void testSynoDict() throws IOException {
         SynoDictionary synos = new SynoDictionary();
-
+//        List<String> a = new List<String>[];
+//
+//        a = normalForms();
 
         assertEquals(Arrays.asList("бык", "бычий"), Arrays.asList(synos.getSyno("бычок")).get(0));
         assertEquals(Arrays.asList("бык", "бычок"), Arrays.asList(synos.getSyno("бычий")).get(0));
@@ -215,6 +217,7 @@ public class MorphAnalyzerTest {
         assertEquals(Arrays.asList("красивый"), morph.normalForms("красивого"));
         assertEquals(Arrays.asList("для", "длить"), morph.normalForms("для"));
         assertEquals(Arrays.asList("лошарик", "лошарика"), morph.normalForms("лошарикам"));
+//        System.out.println(morph.normalForms("бычий"));
     }
 
     @Test
