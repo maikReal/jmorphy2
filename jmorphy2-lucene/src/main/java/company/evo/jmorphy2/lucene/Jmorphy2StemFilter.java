@@ -10,6 +10,7 @@ import java.util.Iterator;
 import com.google.common.collect.Lists;
 import com.sun.tools.classfile.Opcode;
 import company.evo.jmorphy2.SynoDictionary;
+import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenFilter;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
@@ -105,19 +106,19 @@ public class Jmorphy2StemFilter extends TokenFilter {
 
                 normalForms = getNormalForms(termAtt).iterator();
 
+                if (normalForms.hasNext()) {
+                    setTerm(normalForms.next(), posIncAtt.getPositionIncrement());
                     if (normalForms.hasNext()) {
-                        setTerm(normalForms.next(), posIncAtt.getPositionIncrement()+1); //changes here
-                        if (normalForms.hasNext()) {
-                            savedState = captureState();
-                        }
-
-
-                        skippedPositions = 0;
-                        return true;
+                        savedState = captureState();
                     }
 
 
-                    skippedPositions += posIncAtt.getPositionIncrement();
+                    skippedPositions = 0;
+                    return true;
+                }
+
+
+                skippedPositions += posIncAtt.getPositionIncrement();
 
             }
 
@@ -125,7 +126,7 @@ public class Jmorphy2StemFilter extends TokenFilter {
         }
 
         restoreState(savedState);
-        setTerm(normalForms.next(), posIncAtt.getPositionIncrement()); // changes here
+        setTerm(normalForms.next(), posIncAtt.getPositionIncrement()-1); // changes here
 
         return true;
     }
@@ -137,7 +138,7 @@ public class Jmorphy2StemFilter extends TokenFilter {
         char[] termBuffer = termAtt.buffer();
         int termLength = termAtt.length();
         String token = new String(termBuffer, 0, termLength);
-        
+
         List<ParsedWord> parseds = morph.parse(token);
 
         for (ParsedWord p : parseds) {
@@ -172,16 +173,18 @@ public class Jmorphy2StemFilter extends TokenFilter {
 
         SynoDictionary syno = new SynoDictionary();
 
-
-        if (syno.getSyno2(normalForms) == null){
+        try {
+            if (syno.getSyno2(normalForms.get(0)) == null) {
+                return normalForms;
+            } else {
+                List<String> normF = new ArrayList<String>();
+                normF.addAll(syno.getSyno2(normalForms.get(0)));
+                return normF;
+            }
+        }catch (IndexOutOfBoundsException e){
             return normalForms;
-        }else{
-            List<String> normF = new ArrayList<String>();
-            normF.add(normalForms.get(0));
-            normF.addAll(syno.getSyno2(normalForms));
-
-            return normF;
         }
+
 
     }
 

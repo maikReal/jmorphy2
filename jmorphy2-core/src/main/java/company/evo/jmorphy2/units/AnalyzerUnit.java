@@ -63,7 +63,7 @@ public abstract class AnalyzerUnit {
         @Override
         public String toString() {
             return String.format("<ParsedWord: \"%s\", \"%s\", \"%s\", \"%s\", %.6f, %s>",
-                                 word, tag, normalForm, foundWord, score, AnalyzerUnit.this.getClass());
+                    word, tag, normalForm, foundWord, score, AnalyzerUnit.this.getClass());
         }
     }
 }

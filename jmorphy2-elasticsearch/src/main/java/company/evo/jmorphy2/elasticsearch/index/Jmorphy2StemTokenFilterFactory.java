@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
+import company.evo.jmorphy2.SynoDictionary;
 import org.apache.lucene.analysis.TokenStream;
 
 import org.elasticsearch.common.settings.Settings;
@@ -55,6 +56,16 @@ public class Jmorphy2StemTokenFilterFactory extends AbstractTokenFilterFactory {
             throw new IllegalArgumentException
                 ("Missing [lang] configuration for jmorphy2 token filter");
         }
+
+
+        String synoPath = settings.get("syno_path");
+        if (synoPath == null) {
+            throw new IllegalArgumentException
+                    ("Missing [syno_path] configuration for jmorphy2 token filter. synoPath now is: " + synoPath);
+        }
+
+        SynoDictionary.pathToDict = synoPath;
+
         morph = jmorphy2Service.getMorphAnalyzer(lang, substitutesPath, cacheSize);
         if (morph == null) {
             throw new IllegalArgumentException

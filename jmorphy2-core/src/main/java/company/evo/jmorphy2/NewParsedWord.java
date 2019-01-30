@@ -4,7 +4,6 @@ package company.evo.jmorphy2;
 import java.util.List;
 
 public class NewParsedWord {
-    static List<NewParsedWord> allInfo;
 
     private String word;
     private Tag tag;
@@ -14,17 +13,16 @@ public class NewParsedWord {
 
     private SynoDictionary synos = new SynoDictionary();
 
-    public NewParsedWord(String word, Tag tag, List<String> normalForm, String foundWord, float score) {
+    public NewParsedWord(String word, Tag tag, String normalForm, String foundWord, float score) {
         this.word = word;
         this.tag = tag;
-        this.normalForm = synos.getSyno(normalForm.get(0));
+        this.normalForm = synos.getSyno2(normalForm);
         this.foundWord = foundWord;
         this.score = score;
 
     }
 
 
-    // get noramlForm
     public List<String> normalForm() {
         return this.normalForm;
     }

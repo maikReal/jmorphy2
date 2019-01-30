@@ -44,7 +44,6 @@ public class MorphAnalyzer {
 
         public Builder fileLoader(FileLoader loader) {
             this.loader = loader;
-            // open file just one time
             SynoDictionary.openFile();
             return this;
         }
@@ -191,7 +190,6 @@ public class MorphAnalyzer {
                 parseds = parseNC(word);
                 cache.put(word, parseds);
             }
-//            System.out.println(parseds);
             return parseds;
         }
         return parseNC(word);
@@ -202,7 +200,6 @@ public class MorphAnalyzer {
         List<ParsedWord> parseds = Lists.newArrayList();
         for (AnalyzerUnit unit : units) {
             List<ParsedWord> unitParseds = unit.parse(word, wordLower);
-//            System.out.println(unitParseds);
             if (unitParseds == null) {
                 continue;
             }
@@ -222,22 +219,18 @@ public class MorphAnalyzer {
     // parcer with using synos for normalForm
     public Hashtable<Integer, NewParsedWord> parse2(String word) throws IOException {
         List<ParsedWord> endParsedWord = parse(word);
-//
 
         Hashtable<Integer, NewParsedWord> endRes = new Hashtable<>();
 
         int index = 0;
         for (ParsedWord w : endParsedWord) {
             SynoDictionary s = new SynoDictionary();
-            NewParsedWord wordObject = new NewParsedWord(w.word, w.tag, Arrays.asList(w.normalForm), w.foundWord, w.score);
-//            result.add(index, wordObject);
+            NewParsedWord wordObject = new NewParsedWord(w.word, w.tag, w.normalForm, w.foundWord, w.score);
             endRes.put(index, wordObject);
             index += 0;
 
-//            System.out.println(wordObject);
 
         }
-//        System.out.println(endRes.get(0));
         return endRes;
 
     }
@@ -287,15 +280,4 @@ public class MorphAnalyzer {
         return filteredParseds;
     }
 
-//
-//    public static void main(String[] args) throws IOException {
-////        String lang = "ru";
-////        String dictResourcePath = String.format("/company/evo/jmorphy2/%s/pymorphy2_dicts", "ru");
-////        MorphAnalyzer m = new MorphAnalyzer.Builder()
-////                .fileLoader(new ResourceFileLoader(dictResourcePath))
-////                .cacheSize(0)
-////                .build();
-//        MorphAnalyzer m = new MorphAnalyzer();
-//        m.parse("красивый");
-//    }
 }

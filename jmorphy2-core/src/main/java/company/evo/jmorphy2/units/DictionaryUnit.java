@@ -10,11 +10,11 @@ import company.evo.jmorphy2.*;
 
 public class DictionaryUnit extends AnalyzerUnit {
     private final Dictionary dict;
-    private final Map<Character,String> charSubstitutes;
+    private final Map<Character, String> charSubstitutes;
 
     public DictionaryUnit(Tag.Storage tagStorage,
                           Dictionary dict,
-                          Map<Character,String> charSubstitutes,
+                          Map<Character, String> charSubstitutes,
                           boolean terminate,
                           float score) {
         super(tagStorage, terminate, score);
@@ -24,7 +24,7 @@ public class DictionaryUnit extends AnalyzerUnit {
 
     public static class Builder extends AnalyzerUnit.Builder {
         private Dictionary.Builder dictBuilder;
-        private Map<Character,String> charSubstitutes;
+        private Map<Character, String> charSubstitutes;
 
         public Builder(Dictionary.Builder dictBuilder,
                        boolean terminate,
@@ -33,7 +33,7 @@ public class DictionaryUnit extends AnalyzerUnit {
             this.dictBuilder = dictBuilder;
         }
 
-        public Builder charSubstitutes(Map<Character,String> charSubstitutes) {
+        public Builder charSubstitutes(Map<Character, String> charSubstitutes) {
             this.charSubstitutes = charSubstitutes;
             this.cachedUnit = null;
             return this;
@@ -59,9 +59,6 @@ public class DictionaryUnit extends AnalyzerUnit {
             parseds.add(new DictionaryParsedWord(wordLower, tag, normalForm, wf.word, wf, score));
         }
 
-        // возможно нужно написать здесь
-//        NewParsedWord newPrasedWord = new NewParsedWord(parseds.);
-//        System.out.println(parseds);
         return parseds;
     }
 

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27583816-555f-46b4-a4e7-038a07997836" name="Default Changelist" comment="">
+    <list default="true" id="6c07772e-03a8-4811-80c2-e00acabcab7a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmorphy2-core/out/production/resources/lang/ru/Syno_Dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/jmorphy2-core/out/production/resources/lang/ru/Syno_Dictionary.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/MorphAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/MorphAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/NewParsedWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/NewParsedWord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/SynoDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/SynoDictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/AnalyzerUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/AnalyzerUnit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/DictionaryUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/DictionaryUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmorphy2-core/src/main/resources/lang/ru/Syno_Dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/jmorphy2-core/src/main/resources/lang/ru/Syno_Dictionary.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jmorphy2-core/src/test/java/company/evo/jmorphy2/MorphAnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jmorphy2-core/src/test/java/company/evo/jmorphy2/MorphAnalyzerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/index/Jmorphy2StemTokenFilterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/index/Jmorphy2StemTokenFilterFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jmorphy2-lucene/src/main/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/jmorphy2-lucene/src/main/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jmorphy2-lucene/src/test/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jmorphy2-lucene/src/test/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilterTest.java" afterDir="false" />
     </list>
@@ -54,10 +55,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/test/java/company/evo/jmorphy2/MorphAnalyzerTest.java">
+        <entry file="file://$PROJECT_DIR$/jmorphy2-lucene/src/main/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+            <state relative-caret-position="2295">
+              <caret line="175" selection-start-line="175" selection-end-line="175" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/SynoDictionary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,15 +76,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jmorphy2-lucene/src/main/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilter.java">
+        <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/plugin/AnalysisJmorphy2Plugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1804">
-              <caret line="191" column="39" selection-start-line="191" selection-start-column="39" selection-end-line="191" selection-end-column="39" />
-              <folding>
-                <element signature="e#4680#4688#0" expanded="true" />
-                <element signature="e#4743#4751#0" expanded="true" />
-                <element signature="e#6175#6183#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="150">
+              <caret line="38" column="56" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/indices/Jmorphy2Service.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1110">
+              <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/SuffixesDAWG.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -82,68 +105,58 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jmorphy2-lucene/src/test/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="88" column="38" lean-forward="true" selection-start-line="81" selection-start-column="36" selection-end-line="88" selection-end-column="38" />
+            <state relative-caret-position="540">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/Tag.java">
+        <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/index/Jmorphy2StemTokenFilterFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/SynoDictionary.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-              <folding>
-                <element signature="e#1308#1316#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="48" column="76" selection-start-line="48" selection-start-column="76" selection-end-line="48" selection-end-column="76" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/NewParsedWord.java">
+        <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/MorphAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding>
-                <element signature="e#792#793#0" expanded="true" />
-                <element signature="e#823#824#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="510">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/test/java/company/evo/jmorphy2/MorphAnalyzerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>MorphAna</find>
-      <find>parse</find>
-      <find>MorphAnalyzer</find>
-      <find>morph</find>
-      <find>pars</find>
-      <find>getNorm</find>
-      <find>normal</find>
-      <find>norm</find>
-      <find>getNor</find>
-      <find>Normal</find>
-      <find>nor</find>
-      <find>getN</find>
-      <find>SYs</find>
-      <find>posINcAtt</find>
-      <find>posIncA</find>
-      <find>input</find>
-      <find>Toke</find>
-      <find>token</find>
+      <find>lang</find>
+      <find>char</find>
+      <find>ope</find>
+      <find>fileLoader</find>
+      <find>substitutesPath</find>
+      <find>get</find>
+      <find>ROO</find>
+      <find>loader</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,27 +165,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/NewParsedWord.java" />
-        <option value="$PROJECT_DIR$/jmorphy2-elasticsearch/build.gradle" />
-        <option value="$PROJECT_DIR$/jmorphy2-dicts-ru/build.gradle" />
-        <option value="$PROJECT_DIR$/jmorphy2-dicts-uk/build.gradle" />
-        <option value="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/ParsedWord.java" />
-        <option value="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/DictionaryUnit.java" />
         <option value="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/AnalyzerUnit.java" />
-        <option value="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/MorphAnalyzer.java" />
+        <option value="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/DictionaryUnit.java" />
+        <option value="$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/plugin/AnalysisJmorphy2Plugin.java" />
+        <option value="$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/index/Jmorphy2StemTokenFilterFactory.java" />
+        <option value="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/Trie.java" />
+        <option value="$PROJECT_DIR$/jmorphy2-lucene/src/test/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilterTest.java" />
+        <option value="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/NewParsedWord.java" />
         <option value="$PROJECT_DIR$/jmorphy2-core/src/test/java/company/evo/jmorphy2/MorphAnalyzerTest.java" />
         <option value="$PROJECT_DIR$/jmorphy2-lucene/src/main/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilter.java" />
-        <option value="$PROJECT_DIR$/jmorphy2-lucene/src/test/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilterTest.java" />
+        <option value="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/MorphAnalyzer.java" />
         <option value="$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/SynoDictionary.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1920" />
     <option name="width" value="2560" />
     <option name="height" value="1440" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -226,16 +237,6 @@
               <item name="jmorphy2-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jmorphy2" type="462c0819:PsiDirectoryNode" />
-              <item name="units" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jmorphy2_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jmorphy2_plugin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="jmorphy2-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -280,56 +281,6 @@
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jmorphy2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jmorphy2_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jmorphy2_plugin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="jmorphy2-dicts-ru" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="jmorphy2_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jmorphy2_plugin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="jmorphy2-dicts-ru" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jmorphy2_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jmorphy2_plugin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="jmorphy2-dicts-ru" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="jmorphy2_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jmorphy2_plugin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="jmorphy2-dicts-ru" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jmorphy2_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jmorphy2_plugin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="jmorphy2-dicts-ru" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="ru" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jmorphy2_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jmorphy2_plugin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="jmorphy2-dicts-ru" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="ru" type="462c0819:PsiDirectoryNode" />
-              <item name="pymorphy2_dicts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jmorphy2_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jmorphy2_plugin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="jmorphy2-dicts-uk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="jmorphy2_plugin" type="b2602c69:ProjectViewProjectNode" />
@@ -507,14 +458,13 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548430020839" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/lucene-7.5.0/core/lucene-core-7.5.0.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548838970878" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -529,6 +479,19 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.Jmorphy2StemFilterTest.test">
+    <configuration name="Trie" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="company.evo.jmorphy2.Trie" />
+      <module name="company.evo.jmorphy2.jmorphy2-core.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="company.evo.jmorphy2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Jmorphy2StemFilterTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="company.evo.jmorphy2.jmorphy2-lucene.test" />
       <extension name="coverage">
@@ -545,64 +508,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Jmorphy2StemFilterTest.testDisablePositionIncrements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="company.evo.jmorphy2.jmorphy2-lucene.test" />
+    <configuration name="Jmorphy2StemTokenFilterFactoryTests.testJmorphy2StemTokenFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="company.evo.jmorphy2.jmorphy2-elasticsearch.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="company.evo.jmorphy2.lucene.*" />
+          <option name="PATTERN" value="company.evo.jmorphy2.elasticsearch.index.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="company.evo.jmorphy2.lucene" />
-      <option name="MAIN_CLASS_NAME" value="company.evo.jmorphy2.lucene.Jmorphy2StemFilterTest" />
-      <option name="METHOD_NAME" value="testDisablePositionIncrements" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MorphAnalyzerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="company.evo.jmorphy2.jmorphy2-core.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="company.evo.jmorphy2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="company.evo.jmorphy2" />
-      <option name="MAIN_CLASS_NAME" value="company.evo.jmorphy2.MorphAnalyzerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MorphAnalyzerTest.test_normalForms" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="company.evo.jmorphy2.jmorphy2-core.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="company.evo.jmorphy2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="company.evo.jmorphy2" />
-      <option name="MAIN_CLASS_NAME" value="company.evo.jmorphy2.MorphAnalyzerTest" />
-      <option name="METHOD_NAME" value="test_normalForms" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MorphAnalyzerTest.test_parse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="company.evo.jmorphy2.jmorphy2-core.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="company.evo.jmorphy2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="company.evo.jmorphy2" />
-      <option name="MAIN_CLASS_NAME" value="company.evo.jmorphy2.MorphAnalyzerTest" />
-      <option name="METHOD_NAME" value="test_parse" />
+      <option name="PACKAGE_NAME" value="company.evo.jmorphy2.elasticsearch.index" />
+      <option name="MAIN_CLASS_NAME" value="company.evo.jmorphy2.elasticsearch.index.Jmorphy2StemTokenFilterFactoryTests" />
+      <option name="METHOD_NAME" value="testJmorphy2StemTokenFilter" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -611,10 +527,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Jmorphy2StemFilterTest.test" />
-        <item itemvalue="JUnit.Jmorphy2StemFilterTest.testDisablePositionIncrements" />
-        <item itemvalue="JUnit.MorphAnalyzerTest" />
-        <item itemvalue="JUnit.MorphAnalyzerTest.test_parse" />
-        <item itemvalue="JUnit.MorphAnalyzerTest.test_normalForms" />
+        <item itemvalue="Application.Trie" />
+        <item itemvalue="JUnit.Jmorphy2StemTokenFilterFactoryTests.testJmorphy2StemTokenFilter" />
       </list>
     </recent_temporary>
   </component>
@@ -623,86 +537,77 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="27583816-555f-46b4-a4e7-038a07997836" name="Default Changelist" comment="" />
-      <created>1548064619383</created>
+      <changelist id="6c07772e-03a8-4811-80c2-e00acabcab7a" name="Default Changelist" comment="" />
+      <created>1548430998680</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1548064619383</updated>
-      <workItem from="1548064622416" duration="51000" />
-      <workItem from="1548064697446" duration="1007000" />
-      <workItem from="1548081628798" duration="2000" />
-      <workItem from="1548154753232" duration="2291000" />
-      <workItem from="1548162272985" duration="8000" />
-      <workItem from="1548163537301" duration="29000" />
-      <workItem from="1548163590831" duration="1440000" />
-      <workItem from="1548235585279" duration="12000" />
-      <workItem from="1548235624622" duration="4248000" />
-      <workItem from="1548249606859" duration="10000" />
-      <workItem from="1548249656097" duration="3371000" />
-      <workItem from="1548256364285" duration="28521000" />
+      <updated>1548430998680</updated>
+      <workItem from="1548431000152" duration="695000" />
+      <workItem from="1548684245695" duration="22471000" />
+      <workItem from="1548838367955" duration="840000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.25 at 18h 21m 04s.xml">
+    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.30 at 00h 32m 46s.xml">
       <configuration name="Jmorphy2StemFilterTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.25 at 18h 21m 26s.xml">
+    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.30 at 00h 33m 13s.xml">
       <configuration name="Jmorphy2StemFilterTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.25 at 18h 21m 33s.xml">
+    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.30 at 00h 33m 46s.xml">
       <configuration name="Jmorphy2StemFilterTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.25 at 18h 22m 02s.xml">
+    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.30 at 00h 38m 52s.xml">
       <configuration name="Jmorphy2StemFilterTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.25 at 18h 23m 12s.xml">
+    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.30 at 00h 39m 16s.xml">
       <configuration name="Jmorphy2StemFilterTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.25 at 18h 23m 59s.xml">
+    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.30 at 00h 57m 48s.xml">
       <configuration name="Jmorphy2StemFilterTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.25 at 18h 24m 21s.xml">
+    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.30 at 11h 40m 09s.xml">
       <configuration name="Jmorphy2StemFilterTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.25 at 18h 24m 44s.xml">
+    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.30 at 11h 40m 24s.xml">
       <configuration name="Jmorphy2StemFilterTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.25 at 18h 24m 57s.xml">
+    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.30 at 11h 41m 42s.xml">
       <configuration name="Jmorphy2StemFilterTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.25 at 18h 26m 13s.xml">
+    <history-entry file="Jmorphy2StemFilterTest_test - 2019.01.30 at 11h 42m 32s.xml">
       <configuration name="Jmorphy2StemFilterTest.test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40990000" />
+    <option name="totallyTimeSpent" value="24006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="2560" height="1440" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20333599" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17752184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23246951" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3605183" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.3293348" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32972974" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3292683" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32864866" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.2949695" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.28125" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Build" order="8" visible="true" weight="0.3292683" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -718,76 +623,176 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-test-framework/7.3.1/c0ff72f339f4f6dcb4382001b2183feed6dd14dc/lucene-test-framework-7.3.1-sources.jar!/org/apache/lucene/analysis/BaseTokenStreamTestCase.java</url>
-          <line>754</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/Dictionary.java">
+    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/KnownPrefixUnit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="181" column="56" selection-start-line="181" selection-start-column="50" selection-end-line="181" selection-end-column="56" />
+        <state relative-caret-position="75">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/7.3.1/2c99a1c8d3ab277895c416de8e77185893326a10/lucene-core-7.3.1-sources.jar!/org/apache/lucene/analysis/tokenattributes/PositionIncrementAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/6.3.2/65e320a77ebe890536a3d4615b524220abaeb764/elasticsearch-6.3.2-sources.jar!/org/elasticsearch/env/Environment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="276" column="16" selection-start-line="276" selection-start-column="16" selection-end-line="276" selection-end-column="16" />
           <folding>
-            <element signature="e#6551#6552#0" expanded="true" />
-            <element signature="e#6579#6580#0" expanded="true" />
+            <element signature="e#10265#10266#0" expanded="true" />
+            <element signature="e#10298#10299#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/FileLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/FSFileLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/JSONUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/ParsedWord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="50" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/ProbabilityEstimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/ResourceFileLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/Resources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
+        <state relative-caret-position="75">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jmorphy2-lucene/src/main/java/company/evo/jmorphy2/lucene/Jmorphy2Analyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/6.3.2/65e320a77ebe890536a3d4615b524220abaeb764/elasticsearch-6.3.2-sources.jar!/org/elasticsearch/index/analysis/TokenFilterFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/6.3.2/65e320a77ebe890536a3d4615b524220abaeb764/elasticsearch-6.3.2-sources.jar!/org/elasticsearch/common/settings/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2308">
+          <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
+          <folding>
+            <element signature="e#9588#9589#0" expanded="true" />
+            <element signature="e#9642#9643#0" expanded="true" />
+            <element signature="e#25914#25915#0" expanded="true" />
+            <element signature="e#25950#25951#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Locale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="572" column="34" selection-start-line="572" selection-start-column="31" selection-end-line="572" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/test/java/company/evo/jmorphy2/elasticsearch/index/Jmorphy2StemTokenFilterFactoryTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/6.3.2/65e320a77ebe890536a3d4615b524220abaeb764/elasticsearch-6.3.2-sources.jar!/org/elasticsearch/index/AbstractIndexComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/6.3.2/65e320a77ebe890536a3d4615b524220abaeb764/elasticsearch-6.3.2-sources.jar!/org/elasticsearch/index/IndexSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1784">
+          <caret line="489" column="20" selection-start-line="489" selection-start-column="20" selection-end-line="489" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/6.3.2/65e320a77ebe890536a3d4615b524220abaeb764/elasticsearch-6.3.2-sources.jar!/org/elasticsearch/index/analysis/AbstractTokenFilterFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="35" column="78" selection-start-line="35" selection-start-column="78" selection-end-line="35" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/index/Jmorphy2AnalyzerProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/nio/file/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/AnalyzerUnit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-310">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/DictionaryUnit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-test-framework/7.3.1/c0ff72f339f4f6dcb4382001b2183feed6dd14dc/lucene-test-framework-7.3.1-sources.jar!/org/apache/lucene/analysis/BaseTokenStreamTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="384" column="38" lean-forward="true" selection-start-line="384" selection-start-column="38" selection-end-line="384" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/Trie.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/7.3.1/2c99a1c8d3ab277895c416de8e77185893326a10/lucene-core-7.3.1-sources.jar!/org/apache/lucene/analysis/Analyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="189" column="27" selection-start-line="189" selection-start-column="27" selection-end-line="189" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/NewParsedWord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jmorphy2-lucene/src/main/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="175" selection-start-line="175" selection-end-line="175" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/plugin/AnalysisJmorphy2Plugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="38" column="56" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/indices/Jmorphy2Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -798,334 +803,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/WordsDAWG.java">
+    <entry file="file://$PROJECT_DIR$/jmorphy2-lucene/src/test/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/AnalyzerUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="48" column="62" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/DictionaryUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="72" column="46" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/KnownPrefixUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/KnownSuffixUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="134" column="29" selection-start-line="134" selection-start-column="29" selection-end-line="134" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/LatinUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/NumberUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/PrefixedUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/PunctuationUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/RegexUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/RomanUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/UnknownPrefixUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/units/UnknownUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/index/Jmorphy2StemTokenFilterFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/index/Jmorphy2SubjectTokenFilterFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="54" column="20" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/indices/Jmorphy2Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="153" column="32" selection-start-line="153" selection-start-column="32" selection-end-line="153" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/test/java/company/evo/jmorphy2/elasticsearch/index/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/index/Jmorphy2AnalyzerProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="540">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/MorphAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/plugin/AnalysisJmorphy2Plugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="50" column="33" lean-forward="true" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/io/FileInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="137" selection-start-line="137" selection-end-line="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/io/FileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/7.3.1/2c99a1c8d3ab277895c416de8e77185893326a10/lucene-core-7.3.1-sources.jar!/org/apache/lucene/analysis/ReusableStringReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/7.3.1/2c99a1c8d3ab277895c416de8e77185893326a10/lucene-core-7.3.1-sources.jar!/org/apache/lucene/analysis/Analyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="419" column="23" selection-start-line="419" selection-start-column="23" selection-end-line="419" selection-end-column="23" />
-          <folding>
-            <element signature="e#16914#16915#0" expanded="true" />
-            <element signature="e#16939#16940#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/7.3.1/2c99a1c8d3ab277895c416de8e77185893326a10/lucene-core-7.3.1-sources.jar!/org/apache/lucene/util/AttributeSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="296" selection-start-line="296" selection-end-line="296" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-analyzers-common/7.3.1/2d913f6e57b1a0bc0d75a48ed919ffe09fdc0c82/lucene-analyzers-common-7.3.1-sources.jar!/org/apache/lucene/analysis/util/CharTokenizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="243" selection-start-line="243" selection-end-line="243" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/7.3.1/2c99a1c8d3ab277895c416de8e77185893326a10/lucene-core-7.3.1-sources.jar!/org/apache/lucene/analysis/TokenFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/7.3.1/2c99a1c8d3ab277895c416de8e77185893326a10/lucene-core-7.3.1-sources.jar!/org/apache/lucene/analysis/tokenattributes/PositionIncrementAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="47" column="54" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/7.3.1/2c99a1c8d3ab277895c416de8e77185893326a10/lucene-core-7.3.1-sources.jar!/org/apache/lucene/util/Attribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/7.3.1/2c99a1c8d3ab277895c416de8e77185893326a10/lucene-core-7.3.1-sources.jar!/org/apache/lucene/analysis/tokenattributes/PackedTokenAttributeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="e#2273#2274#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.carrotsearch.randomizedtesting/randomizedtesting-runner/2.5.3/db526180f62abc5b41e74a092de35c4bd53384d8/randomizedtesting-runner-2.5.3-sources.jar!/com/carrotsearch/randomizedtesting/ThreadLeakControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="403" selection-start-line="403" selection-end-line="403" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/7.3.1/2c99a1c8d3ab277895c416de8e77185893326a10/lucene-core-7.3.1-sources.jar!/org/apache/lucene/analysis/tokenattributes/KeywordAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/7.3.1/2c99a1c8d3ab277895c416de8e77185893326a10/lucene-core-7.3.1-sources.jar!/org/apache/lucene/analysis/TokenStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="150" column="26" selection-start-line="150" selection-start-column="26" selection-end-line="150" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.carrotsearch.randomizedtesting/randomizedtesting-runner/2.5.3/db526180f62abc5b41e74a092de35c4bd53384d8/randomizedtesting-runner-2.5.3-sources.jar!/com/carrotsearch/randomizedtesting/rules/StatementAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-test-framework/7.3.1/c0ff72f339f4f6dcb4382001b2183feed6dd14dc/lucene-test-framework-7.3.1-sources.jar!/org/apache/lucene/analysis/BaseTokenStreamTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="753" selection-start-line="753" selection-end-line="753" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.carrotsearch.randomizedtesting/randomizedtesting-runner/2.5.3/db526180f62abc5b41e74a092de35c4bd53384d8/randomizedtesting-runner-2.5.3-sources.jar!/com/carrotsearch/randomizedtesting/RandomizedRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="1738" selection-start-line="1738" selection-end-line="1738" />
-          <folding>
-            <element signature="e#31663#32010#0" expanded="true" />
-            <element signature="e#32009#32010#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-lucene/src/test/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="88" column="38" lean-forward="true" selection-start-line="81" selection-start-column="36" selection-end-line="88" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/Tag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/NewParsedWord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="e#792#793#0" expanded="true" />
-            <element signature="e#823#824#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jmorphy2-lucene/src/main/java/company/evo/jmorphy2/lucene/Jmorphy2StemFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1804">
-          <caret line="191" column="39" selection-start-line="191" selection-start-column="39" selection-end-line="191" selection-end-column="39" />
-          <folding>
-            <element signature="e#4680#4688#0" expanded="true" />
-            <element signature="e#4743#4751#0" expanded="true" />
-            <element signature="e#6175#6183#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="510">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/test/java/company/evo/jmorphy2/MorphAnalyzerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jmorphy2-elasticsearch/src/main/java/company/evo/jmorphy2/elasticsearch/index/Jmorphy2StemTokenFilterFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="48" column="76" selection-start-line="48" selection-start-column="76" selection-end-line="48" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jmorphy2-core/src/main/java/company/evo/jmorphy2/SynoDictionary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        <state relative-caret-position="195">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
           <folding>
-            <element signature="e#1308#1316#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1182,11 +893,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>jmorphy2_plugin</last-edited>
+          <last-edited>main|jmorphy2-lucene|jmorphy2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1194,7 +906,7 @@
       </state>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>10</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
