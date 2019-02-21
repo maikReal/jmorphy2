@@ -18,7 +18,7 @@ apply plugin: 'elasticsearch.esplugin'
 apply plugin: 'com.jfrog.bintray'
 
 esplugin {
-    name = 'analysis-jmorphy2'
+    name = 'jmorphy2-ozon'
     description 'Jmorphy2 plugin for ElasticSearch'
     classname = 'company.evo.jmorphy2.elasticsearch.plugin.AnalysisJmorphy2Plugin'
 }

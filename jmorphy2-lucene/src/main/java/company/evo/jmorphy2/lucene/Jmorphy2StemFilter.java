@@ -126,7 +126,7 @@ public class Jmorphy2StemFilter extends TokenFilter {
         }
 
         restoreState(savedState);
-        setTerm(normalForms.next(), posIncAtt.getPositionIncrement()-1); // changes here
+        setTerm(normalForms.next(), posIncAtt.getPositionIncrement() - 1); // changes here
 
         return true;
     }
@@ -181,7 +181,7 @@ public class Jmorphy2StemFilter extends TokenFilter {
                 normF.addAll(syno.getSyno2(normalForms.get(0)));
                 return normF;
             }
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             return normalForms;
         }
 

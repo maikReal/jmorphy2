@@ -2,15 +2,14 @@ package company.evo.jmorphy2;
 
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 
 public class SynoDictionary {
 
-    static List<String> allSynos = new ArrayList<>();
-
+    private static HashMap<String, List> wordsTable1 = new HashMap<>();
     public static String pathToDict;
 
 
@@ -24,9 +23,29 @@ public class SynoDictionary {
             reader = new BufferedReader(new FileReader(file));
             String text = null;
 
+            List<String> textArr;
+            String keyTable;
+
             while ((text = reader.readLine()) != null) {
-                allSynos.add(text);
+
+                textArr = Arrays.asList(text.split(","));
+
+                if (textArr.size() > 2) {
+                    for (int i = 0; i < textArr.size(); i++) {
+                        keyTable = textArr.get(i);
+
+                        wordsTable1.put(keyTable, textArr);
+                    }
+                }
+                if (textArr.size() == 2) {
+
+                    wordsTable1.put(textArr.get(0), textArr);
+                    wordsTable1.put(textArr.get(1), textArr);
+
+                }
+
             }
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -47,16 +66,8 @@ public class SynoDictionary {
 
     public List<String> getSyno2(String startWord) {
 
-
-            for (String syno : allSynos) {
-                if (syno.contains(startWord)) {
-                    return Arrays.asList(syno.split(","));
-
-                }
-            }
-            return null;
+        return wordsTable1.get(startWord);
 
     }
-
 
 }

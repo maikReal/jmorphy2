@@ -46,12 +46,12 @@ public class AnalysisJmorphy2Plugin extends Plugin implements AnalysisPlugin {
     public Map<String, AnalysisProvider<TokenFilterFactory>> getTokenFilters() {
 
         Map<String, AnalysisProvider<TokenFilterFactory>> tokenFilters = new HashMap<>();
-        tokenFilters.put("jmorphy2_stemmer",
+        tokenFilters.put("jmorphy2_ozon_stemmer",
                 (Jmorphy2AnalysisProvider) (indexSettings, environment, name, settings) ->
                         new Jmorphy2StemTokenFilterFactory
                                 (indexSettings, environment, name, settings, jmorphy2Service)
         );
-        tokenFilters.put("jmorphy2_subject",
+        tokenFilters.put("jmorphy2_ozon_subject",
                 (Jmorphy2AnalysisProvider) (indexSettings, environment, name, settings) ->
                         new Jmorphy2SubjectTokenFilterFactory
                                 (indexSettings, environment, name, settings, jmorphy2Service)

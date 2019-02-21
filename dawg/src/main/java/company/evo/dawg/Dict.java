@@ -12,6 +12,7 @@ class Dict {
 
     public Dict(DataInput input) throws IOException {
         int size = input.readInt();
+//        System.out.println(new int[size]);
         units = new int[size];
         for (int i = 0; i < size; i++) {
             units[i] = input.readInt();
@@ -97,5 +98,7 @@ class Dict {
         public static boolean hasLeaf(int base) {
             return (base & HAS_LEAF_BIT & PRECISION_MASK) != 0;
         }
-    };
+    }
+
+    ;
 }
